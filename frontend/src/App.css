@@ -189,3 +189,9 @@ body {
 .hide {
   opacity: 0 !important;
 }
+.typing {
+  font-size: 14px;
+  color: #888;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

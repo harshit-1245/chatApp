@@ -37,10 +37,20 @@ io.on('connection', (socket) => {
     socket.to(data.room).emit("recieve_message", data); // Sending the received message to all clients in the room except the sender
   });
 
+   //sending user is typing
+   socket.on("typing_status",({user,status,room})=>{
+    socket.to(room).emit("user_typing",{user,status});
+   });
+
+   
+ 
+
   // Handling socket disconnection
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
   });
+
+
 });
 
 // Making the server listen on the specified port
